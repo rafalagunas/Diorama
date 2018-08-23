@@ -2,6 +2,8 @@
 
 ## Deployment
 
+- https://lacorrupciondesmedida.herokuapp.com/
+
 ## Dependencies
 
 - react.js.
