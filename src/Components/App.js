@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Welcome from "./Welcome";
+import TableDemo from "./Table";
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div>
         <Header />
         <Welcome />
+        <TableDemo />
       </div>
     );
   }
