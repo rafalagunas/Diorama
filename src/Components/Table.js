@@ -40,23 +40,20 @@ var items = [
 ];
 
 class TableDemo extends Component {
-  fill() {
-    var count = Object.keys(items).length;
-    console.log(count);
+  printRow = item => {
+    return (
+      <tr>
+        <th data-field="items" scope="row">
+          {item.id}
+        </th>
+        <th scope="row">{item.rfc}</th>
 
-    var i;
-    for (i = 0; i < count; i++) {
-      var tab = +(
-        <tr>
-          <th scope="row">` items[i].id</th>
-          <td>items[i].id</td>
-          <td>items[i].rfc</td>
-          <td>items[i].razon_social</td>
-          <td>items[i].supuesto</td>
-        </tr>
-      );
-    }
-  }
+        <td>{item.razon_social}</td>
+        <td>{item.tipo_persona}</td>
+        <td>{item.supuesto}</td>
+      </tr>
+    );
+  };
 
   render() {
     return (
@@ -67,16 +64,14 @@ class TableDemo extends Component {
               <th scope="col">ID</th>
               <th scope="col">RFC</th>
               <th scope="col">RAZÓN SOCIAL</th>
+              <th scope="col">TIPO PERSONA</th>
               <th scope="col">SUPUESTO</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>SFDF3234234</td>
-              <td>Joaquín Guzmán Pérez</td>
-              <td>S</td>
-            </tr>
+            {items.map(item => {
+              return this.printRow(item);
+            })}
           </tbody>
         </table>
       </div>
