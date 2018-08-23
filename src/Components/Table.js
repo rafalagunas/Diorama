@@ -4,38 +4,38 @@ const JsonTable = require("ts-react-json-table");
 var items = [
   {
     id: 75950,
-    name: "Louella Wallace",
-    age: 24,
-    phone: "+44 (0)203 437 7302",
-    color: "green"
+    rfc: "Louella Wallace",
+    razon_social: 24,
+    tipo_persona: "+44 (0)203 437 7302",
+    supuesto: "green"
   },
   {
     id: 80616,
-    name: "Hanson Perry",
-    age: 36,
-    phone: "+44 (0)203 279 3708",
-    color: "brown"
+    rfc: "Hanson Perry",
+    razon_social: 36,
+    tipo_persona: "+44 (0)203 279 3708",
+    supuesto: "brown"
   },
   {
     id: 77621,
-    name: "Brandi Long",
-    age: 20,
-    phone: "+44 (0)203 319 4880",
-    color: "gray"
+    rfc: "Brandi Long",
+    razon_social: 20,
+    tipo_persona: "+44 (0)203 319 4880",
+    supuesto: "gray"
   },
   {
     id: 81299,
-    name: "Tonia Sykes",
-    age: 38,
-    phone: "+44 (0)208 328 3671",
-    color: "blue"
+    rfc: "Tonia Sykes",
+    razon_social: 38,
+    tipo_persona: "+44 (0)208 328 3671",
+    supuesto: "blue"
   },
   {
     id: 14225,
-    name: "Leach Durham",
-    age: 23,
-    phone: "+44 (0)208 280 9572",
-    color: "green"
+    rfc: "Leach Durham",
+    razon_social: 23,
+    tipo_persona: "+44 (0)208 280 9572",
+    supuesto: "green"
   }
 ];
 
@@ -46,13 +46,15 @@ class TableDemo extends Component {
 
     var i;
     for (i = 0; i < count; i++) {
-      <tr>
-        <th scope="row">items[i].id</th>
-        <td>items[i].name</td>
-        <td>items[i].age</td>
-        <td>items[i].phone</td>
-        <td>items[i].color</td>
-      </tr>;
+      var tab = +(
+        <tr>
+          <th scope="row">` items[i].id</th>
+          <td>items[i].id</td>
+          <td>items[i].rfc</td>
+          <td>items[i].razon_social</td>
+          <td>items[i].supuesto</td>
+        </tr>
+      );
     }
   }
 
@@ -62,30 +64,18 @@ class TableDemo extends Component {
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">ID</th>
+              <th scope="col">RFC</th>
+              <th scope="col">RAZÓN SOCIAL</th>
+              <th scope="col">SUPUESTO</th>
             </tr>
           </thead>
           <tbody>
-            {" "}
             <tr>
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
+              <td>SFDF3234234</td>
+              <td>Joaquín Guzmán Pérez</td>
+              <td>S</td>
             </tr>
           </tbody>
         </table>
