@@ -9,6 +9,7 @@ import {
   NavLink
 } from "reactstrap";
 import logo from "../Images/logo.png";
+import { NavContainer } from "../Styles/Header";
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" light>
+        <NavContainer color="faded" light>
           <NavbarBrand href="/" className="mr-auto">
             <img src={logo} height="60" width="170" alt="sss" />
           </NavbarBrand>
@@ -45,7 +46,7 @@ export default class Example extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
-        </Navbar>
+        </NavContainer>
       </div>
     );
   }
