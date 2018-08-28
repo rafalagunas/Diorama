@@ -31,27 +31,29 @@ class DataTable extends React.Component {
   }
 
   render() {
+   
     return (
-      <Container class="table-responsive">
+      <Container >
         <BootstrapTable
-          class="table-hover"
+          class="table table-hover"
           data={items}
           version="4"
+          hover
           pagination
           options={this.options}
           headerStyle={ { background: '#f2f2f2' } }
-            bodyStyle={ { fontSize:13}  }
+            bodyStyle={ { fontSize:12}  }
             search
             searchPlaceholder='Haz una búsqueda...' 
         >
-          <TableHeaderColumn isKey dataField="id">
-            Product ID
+          <TableHeaderColumn isKey dataField="id" dataAlign="center" width="25px">
+            Id
           </TableHeaderColumn>
-          <TableHeaderColumn dataField="rfc">Product Name</TableHeaderColumn>
-          <TableHeaderColumn dataField="razon_social">razón social</TableHeaderColumn>
-          <TableHeaderColumn dataField="tipo_persona">tipo</TableHeaderColumn>
-          <TableHeaderColumn dataField="supuesto">supuesto</TableHeaderColumn>
-          <TableHeaderColumn dataField="Fecha_pp">Fecha</TableHeaderColumn>
+          <TableHeaderColumn width="45px" headerAlign='center' dataField="rfc">RFC</TableHeaderColumn>
+          <TableHeaderColumn width="180px" headerAlign='center' dataField="razon_social">Razón Social</TableHeaderColumn>
+          <TableHeaderColumn width="20px"  headerAlign='center' dataAlign="center" dataField="tipo_persona">Tipo</TableHeaderColumn>
+          <TableHeaderColumn width="30px" headerAlign='center' dataAlign="center" dataField="supuesto">Supuesto</TableHeaderColumn>
+          <TableHeaderColumn width="80px" headerAlign='center' dataAlign="center" dataField="Fecha_pp">Fecha</TableHeaderColumn>
         </BootstrapTable>
       </Container>
     );
