@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Welcome from "./Welcome";
 import TableDemo from "./Table";
+import DataTable from './DataTable'
 import ReactChartkick, { LineChart, PieChart } from "react-chartkick";
 import Chart from "chart.js";
 var data = [
@@ -21,7 +22,7 @@ class App extends Component {
       <div>
         <Header />
         <Welcome />
-        <TableDemo />
+        <DataTable />
 
         <LineChart
           data={{

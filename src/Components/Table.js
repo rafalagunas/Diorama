@@ -57,7 +57,7 @@ class TableDemo extends Component {
 
   render() {
     return (
-      <div class="table-responsive">
+      <div  id="dtBasicExample" class="table-responsive">
         <table class="table table-hover">
           <thead>
             <tr>
