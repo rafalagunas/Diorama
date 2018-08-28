@@ -33,7 +33,7 @@ class DataTable extends React.Component {
   render() {
    
     return (
-      <Container >
+      <Container responsive >
         <BootstrapTable
           class="table table-hover"
           data={items}
@@ -46,14 +46,14 @@ class DataTable extends React.Component {
             search
             searchPlaceholder='Haz una búsqueda...' 
         >
-          <TableHeaderColumn isKey dataField="id" dataAlign="center" width="25px">
+          <TableHeaderColumn isKey dataField="id"  width="40px">
             Id
           </TableHeaderColumn>
-          <TableHeaderColumn width="45px" headerAlign='center' dataField="rfc">RFC</TableHeaderColumn>
-          <TableHeaderColumn width="180px" headerAlign='center' dataField="razon_social">Razón Social</TableHeaderColumn>
-          <TableHeaderColumn width="20px"  headerAlign='center' dataAlign="center" dataField="tipo_persona">Tipo</TableHeaderColumn>
-          <TableHeaderColumn width="30px" headerAlign='center' dataAlign="center" dataField="supuesto">Supuesto</TableHeaderColumn>
-          <TableHeaderColumn width="80px" headerAlign='center' dataAlign="center" dataField="Fecha_pp">Fecha</TableHeaderColumn>
+          <TableHeaderColumn width="130px"  dataAlign="center" dataField="rfc">RFC</TableHeaderColumn>
+          <TableHeaderColumn width="280px" dataField="razon_social">Razón Social</TableHeaderColumn>
+          <TableHeaderColumn  width="50px"  dataAlign="center" dataField="tipo_persona">Tipo</TableHeaderColumn>
+          <TableHeaderColumn width="80px"  dataAlign="center" dataField="supuesto">Supuesto</TableHeaderColumn>
+          <TableHeaderColumn width="100px"  dataAlign="center" dataField="Fecha_pp">Fecha</TableHeaderColumn>
         </BootstrapTable>
       </Container>
     );
