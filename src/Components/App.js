@@ -5,17 +5,24 @@ import TableDemo from "./Table";
 import DataTable from './DataTable'
 import ReactChartkick, { LineChart, PieChart } from "react-chartkick";
 import Chart from "chart.js";
-var data = [
-  { name: "Workout", data: { "2017-01-01": 3, "2017-01-02": 4 } },
-  {
-    name: "Call parents",
-    data: { "2017-01-01": 5, "2017-3-02": 8 },
-    name: "Call parents",
-    data: { "237-01-01": 15, "2017-01-02": 3 }
-  }
+ var items = [
+ "1/12/2017",
+ "1/4/2017",
+ "1/9/2017",
+"1/5/2016",
+ "1/1/2016",
+ "16/11/2014",
+ "16/2/2016",
+ "16/9/2017",
+ "16/2/2016",
+ "16/11/2015",
+ "16/12/2015",
+ "1/12/2017",
+ "16/2/2015",
+ "1/4/2017",
+ "1/11/2016",
+ "1/1/2016"
 ];
-
-// and
 class App extends Component {
   render() {
     return (
