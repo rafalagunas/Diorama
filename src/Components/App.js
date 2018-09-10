@@ -33,7 +33,6 @@ class App extends Component {
         <h1> FIRMES SAT</h1>
         <FirmesTable />
         <h1> Animal Político</h1>
-        <AnimalPoliticoTable />
         <LineChart
           data={{
             "2017-05-13": 2,
