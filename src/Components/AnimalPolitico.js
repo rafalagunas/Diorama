@@ -3,10 +3,15 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 
 import { Container } from "../Styles/Table";
+import { datazerozero } from "../Data/dataset00";
+import { datazeroone } from "../Data/dataset01";
+import { datazerotwo } from "../Data/dataset02";
+import { datazerothree } from "../Data/dataset03";
+import { datazerofour } from "../Data/dataset04";
+import { datazerofive } from "../Data/dataset05";
 
-import { AnimalPolitico } from "../Data/base";
-var items = AnimalPolitico;
-
+var items = datazero.concat(datazerozero, datazeroone, datazerotwo, datazerotwo, datazerothree, datazerofour, datazerofive);
+console.log(items)
 class AnimalPoliticoTable extends React.Component {
   constructor(props) {
     super(props);
