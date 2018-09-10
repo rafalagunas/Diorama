@@ -57,23 +57,25 @@ class TableDemo extends Component {
 
   render() {
     return (
-      <div  id="dtBasicExample" class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">RFC</th>
-              <th scope="col">RAZÓN SOCIAL</th>
-              <th scope="col">TIPO PERSONA</th>
-              <th scope="col">SUPUESTO</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map(item => {
-              return this.printRow(item);
-            })}
-          </tbody>
-        </table>
+      <div>
+        <div id="dtBasicExample" class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">RFC</th>
+                <th scope="col">RAZÓN SOCIAL</th>
+                <th scope="col">TIPO PERSONA</th>
+                <th scope="col">SUPUESTO</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map(item => {
+                return this.printRow(item);
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
