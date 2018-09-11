@@ -18,5 +18,5 @@ export const Title = styled.h1`
   color: #000;
 `;
 export const TitleDiv = styled.div`
-  margin: 0 auto;
+  text-align: center;
 `;

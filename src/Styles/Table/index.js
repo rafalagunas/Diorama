@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  padding-top: 30px;
   .react-bs-table-container {
     .react-bs-table table th {
       white-space: pre-line;
