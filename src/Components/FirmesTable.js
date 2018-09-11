@@ -3,14 +3,6 @@ import React from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 
 import { Container } from "../Styles/Table";
-import { datazero } from "../Data/dataset0";
-import { dataone } from "../Data/dataset1";
-import { datatwo } from "../Data/dataset2";
-import { datathree } from "../Data/dataset3";
-import { datafour } from "../Data/dataset4";
-import { datafive } from "../Data/dataset5";
-
-var items = datazero.concat(dataone, datatwo, datathree, datafour, datafive);
 
 class FirmesTable extends React.Component {
   constructor(props) {

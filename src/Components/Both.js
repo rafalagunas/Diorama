@@ -3,28 +3,6 @@ import React from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 
 import { Container } from "../Styles/Table";
-import { datazero } from "../Data/dataset0";
-import { dataone } from "../Data/dataset1";
-import { datatwo } from "../Data/dataset2";
-import { datathree } from "../Data/dataset3";
-import { datafour } from "../Data/dataset4";
-import { datafive } from "../Data/dataset5";
-import { datazerozero } from "../Data/dataset00";
-/*import { datazeroone } from "../Data/dataset01";
-import { datazerotwo } from "../Data/dataset02";
-import { datazerothree } from "../Data/dataset03";
-import { datazerofour } from "../Data/dataset04";
-import { datazerofive } from "../Data/dataset05";
-*/
-//var items = datazero.concat(datazerozero, datazeroone, datazerotwo, datazerotwo, datazerothree, datazerofour, datazerofive);
-var items = datazero.concat(
-  dataone,
-  datatwo,
-  datathree,
-  datafour,
-  datafive,
-  datazerozero
-);
 
 class Both extends React.Component {
   constructor(props) {
