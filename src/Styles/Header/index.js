@@ -1,12 +1,5 @@
 import styled from "styled-components";
-import {
-  NavItem,
-  Navbar,
-  NavbarBrand,
-  NavLink,
-  Collapse,
-  Nav
-} from "reactstrap";
+import { Navbar } from "reactstrap";
 
 export const NavContainer = styled(Navbar)`
   .nav-link:hover {
@@ -17,4 +10,13 @@ export const NavContainer = styled(Navbar)`
     font-weight: bold;
     color: #000;
   }
+`;
+
+export const Title = styled.h1`
+  font-size: 35px;
+  font-weight: bold;
+  color: #000;
+`;
+export const TitleDiv = styled.div`
+  margin: 0 auto;
 `;

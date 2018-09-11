@@ -9,10 +9,24 @@ import { datatwo } from "../Data/dataset2";
 import { datathree } from "../Data/dataset3";
 import { datafour } from "../Data/dataset4";
 import { datafive } from "../Data/dataset5";
+import { datazerozero } from "../Data/dataset00";
+/*import { datazeroone } from "../Data/dataset01";
+import { datazerotwo } from "../Data/dataset02";
+import { datazerothree } from "../Data/dataset03";
+import { datazerofour } from "../Data/dataset04";
+import { datazerofive } from "../Data/dataset05";
+*/
+//var items = datazero.concat(datazerozero, datazeroone, datazerotwo, datazerotwo, datazerothree, datazerofour, datazerofive);
+var items = datazero.concat(
+  dataone,
+  datatwo,
+  datathree,
+  datafour,
+  datafive,
+  datazerozero
+);
 
-var items = datazero.concat(dataone, datatwo, datathree, datafour, datafive);
-
-class FirmesTable extends React.Component {
+class Both extends React.Component {
   constructor(props) {
     super(props);
 
@@ -66,10 +80,31 @@ class FirmesTable extends React.Component {
           >
             Fecha
           </TableHeaderColumn>
+
+          <TableHeaderColumn
+            width="130px"
+            dataAlign="center"
+            dataField="titulo"
+          >
+            Título
+          </TableHeaderColumn>
+          <TableHeaderColumn width="280px" dataField="balazo">
+            Descripción
+          </TableHeaderColumn>
+          <TableHeaderColumn width="50px" dataAlign="center" dataField="fecha">
+            Fecha
+          </TableHeaderColumn>
+          <TableHeaderColumn
+            width="80px"
+            dataAlign="center"
+            dataField="contenido"
+          >
+            Contenido
+          </TableHeaderColumn>
         </BootstrapTable>
       </Container>
     );
   }
 }
 
-export default FirmesTable;
+export default Both;
