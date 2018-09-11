@@ -66,13 +66,7 @@ class Both extends React.Component {
           >
             Tipo
           </TableHeaderColumn>
-          <TableHeaderColumn
-            width="80px"
-            dataAlign="center"
-            dataField="supuesto"
-          >
-            Supuesto
-          </TableHeaderColumn>
+
           <TableHeaderColumn
             width="100px"
             dataAlign="center"
