@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Components/App";
+import Main from "./Components/Main";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+import "../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 import registerServiceWorker from "./registerServiceWorker";
 
-const Main = () => <App />;
+const App = () => <Main />;
 
-ReactDOM.render(<Main />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();
