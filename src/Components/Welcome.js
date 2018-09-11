@@ -1,6 +1,5 @@
 import React from "react";
 import { Jumbotron, Container } from "reactstrap";
-import PropTypes from "prop-types";
 const Welcome = props => {
   return (
     <div>
