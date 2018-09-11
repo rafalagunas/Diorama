@@ -1,4 +1,4 @@
-let datazerosiete = [
+let datazeroseven = [
     {ID:7000, "ref": "56945", "X": "78639", "id": "550", 
     titulo: "en el df los narcos no reciben proteccion de las autoridades: mancera",
     balazo: "el procurador capitalino dijo que el homicidio de los hermanos david y victor valencia ramirez, ambos implicados en lavado de dinero para el narcotrafico, y quienes fueron baleados dentro de un hospital y un restaurante, confirman esta hipotesis. ",
@@ -36297,4 +36297,4 @@ let datazerosiete = [
     pal_juicio_politico: "0",
     indicador_consecuencias: "0"}
 ];
-export { datazerosiete };
+export { datazeroseven };
