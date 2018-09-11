@@ -2,16 +2,16 @@ import React, { Component } from "react";
 // with es6
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 
-import { Container } from "../Styles/Table";
-/*import { datazerozero } from "../Data/dataset00";
-import { datazeroone } from "../Data/dataset01";
+import { APContainer } from "../Styles/Table";
+import { datazerozero } from "../Data/dataset00";
+/*import { datazeroone } from "../Data/dataset01";
 import { datazerotwo } from "../Data/dataset02";
 import { datazerothree } from "../Data/dataset03";
 import { datazerofour } from "../Data/dataset04";
 import { datazerofive } from "../Data/dataset05";
 */
 //var items = datazero.concat(datazerozero, datazeroone, datazerotwo, datazerotwo, datazerothree, datazerofour, datazerofive);
-var items = 0;
+var items = datazerozero;
 console.log(items);
 class AnimalPoliticoTable extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class AnimalPoliticoTable extends React.Component {
 
   render() {
     return (
-      <Container responsive>
+      <APContainer responsive>
         <BootstrapTable
           class="table table-hover"
           data={items}
@@ -33,6 +33,8 @@ class AnimalPoliticoTable extends React.Component {
           headerStyle={{ background: "#f2f2f2" }}
           bodyStyle={{ fontSize: 12 }}
           search
+          exportCSV
+          csvFileName="animal-politico"
           searchPlaceholder="Haz una búsqueda..."
         >
           <TableHeaderColumn isKey dataField="id" width="40px">
@@ -59,7 +61,7 @@ class AnimalPoliticoTable extends React.Component {
             Contenido
           </TableHeaderColumn>
         </BootstrapTable>
-      </Container>
+      </APContainer>
     );
   }
 }
