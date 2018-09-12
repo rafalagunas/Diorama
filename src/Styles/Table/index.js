@@ -36,3 +36,7 @@ export const ChartModal = styled(Modal)`
   width: 1200px;
   padding-left: 0px;
 `;
+export const Text = styled.p`
+  text-align: center;
+  font-weight: bold;
+`;

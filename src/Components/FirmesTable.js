@@ -2,12 +2,12 @@ import React, { Component } from "react";
 // with es6
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
-import { Container, Sub, ChartModal } from "../Styles/Table";
+import { Container, Text, ChartModal } from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
 import Modal from "react-responsive-modal";
 import {
-  LineChart,
+  ComposedChart,
   Line,
   YAxis,
   XAxis,
@@ -28,12 +28,12 @@ export default class extends React.Component {
         dataTotalSize: 10
       },
       data: [
-        { name: "Page A", uv: 590, pv: 800, amt: 1400 },
-        { name: "Page B", uv: 868, pv: 967, amt: 1506 },
-        { name: "Page C", uv: 1397, pv: 1098, amt: 989 },
-        { name: "Page D", uv: 1480, pv: 1200, amt: 1228 },
-        { name: "Page E", uv: 1520, pv: 1108, amt: 1100 },
-        { name: "Page F", uv: 1400, pv: 680, amt: 1700 }
+        { date: "2014", CompraNet: 550, amt: 1400 },
+        { date: "2015", CompraNet: 550, amt: 1400 },
+
+        { date: "2016", CompraNet: 1098, amt: 989 },
+        { date: "2017", SAT69B: 308 },
+        { date: "2018", CompraNet: 1200, amt: 1228 }
       ]
     };
   }
@@ -106,32 +106,21 @@ export default class extends React.Component {
         </button>
 
         <ChartModal open={open} onClose={this.onToggleModal}>
-          <LineChart
-            width={800}
-            height={300}
+          <ComposedChart
+            width={600}
+            height={400}
             data={this.state.data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis yAxisId="left" />
-            <YAxis yAxisId="right" orientation="right" />
+            <CartesianGrid stroke="#f5f5f5" />
+            <XAxis dataKey="date" />
+            <YAxis />
             <Tooltip />
-            <Legend />
-            <Line
-              yAxisId="left"
-              type="monotone"
-              dataKey="pv"
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-            <Line
-              yAxisId="right"
-              type="monotone"
-              dataKey="uv"
-              stroke="#82ca9d"
-            />
-          </LineChart>
+            <Legend verticalAlign="top" />
+            <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
+            <Line dataKey="SAT69B" stroke="#000" />
+          </ComposedChart>
+          <Text> San Juán del Rio SA de CV</Text>
         </ChartModal>
         <BootstrapTable
           class="table table-hover"
