@@ -50,6 +50,7 @@ export default class extends React.Component {
   };
 
   render() {
+
     const {items, fetchInfo, page} = this.state,
         options = {
             page,
@@ -59,6 +60,7 @@ export default class extends React.Component {
         };
 
       return (
+
       <Container responsive>
         <BootstrapTable
           class="table table-hover"
