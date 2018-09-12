@@ -59,7 +59,7 @@ export default class extends React.Component {
 
   render() {
     const { items, fetchInfo } = this.state;
-
+    console.log("hol");
     return (
       <Container responsive>
         <BootstrapTable
