@@ -44,8 +44,15 @@ export const Text = styled.p`
 export const HorizontalTimeLine = styled.div`
   border-bottom: 3px solid #4588ba;
   width: 250px;
-  margin-left: 120px;
 `;
 export const HorizontalText = styled.p`
   margin-left: 120px;
+  font-weight: bold;
+  color: #4588ba;
+`;
+
+export const Duration = styled.p`
+  margin-left: 230px;
+  font-weight: bold;
+  color: #4588ba;
 `;

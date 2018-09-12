@@ -7,7 +7,8 @@ import {
   Text,
   ChartModal,
   HorizontalTimeLine,
-  HorizontalText
+  HorizontalText,
+  Duration
 } from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
@@ -23,6 +24,7 @@ import {
   Area,
   Bar
 } from "recharts";
+import { Row } from "reactstrap";
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,7 @@ export default class extends React.Component {
         dataTotalSize: 10
       },
       data: [
-        { date: "2014-04-13", CompraNet: 550, amt: 1400 },
+        { date: "2014-04-13(SFP)", CompraNet: 550, amt: 1400 },
         { date: "2015", CompraNet: 550, amt: 1400 },
 
         { date: "2016", CompraNet: 1098, amt: 989 },
@@ -111,6 +113,7 @@ export default class extends React.Component {
           Open modal <img src={icon} />
         </button>
         <ChartModal open={open} onClose={this.onToggleModal}>
+          <span style={{ fontWeight: "bold" }}>Miles de pesos</span>
           <ComposedChart
             width={600}
             height={400}
@@ -119,15 +122,18 @@ export default class extends React.Component {
           >
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="date" />
+
             <YAxis />
             <Tooltip />
             <Legend verticalAlign="top" />
             <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
             <Line dataKey="SAT69B" stroke="#000" />
           </ComposedChart>
-          <HorizontalText> SFP</HorizontalText>
-          <HorizontalTimeLine />
-
+          <Row>
+            <HorizontalText> SFP</HorizontalText>
+            <HorizontalTimeLine />
+          </Row>{" "}
+          <Duration>2.5 Años </Duration>
           <Text> San Juán del Rio SA de CV</Text>
         </ChartModal>{" "}
         <BootstrapTable
