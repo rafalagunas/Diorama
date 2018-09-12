@@ -3,27 +3,18 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
 import { Container } from "../Styles/Table";
-
 import auth from "./auth";
 
 export default class extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      page: 1,
-      totalSize: 10,
-      fetchInfo: {
-        dataTotalSize: 10
-      },
-      currentPage: 1
-    };
-
-    this.options = {
-      onPageChange: this.handlePaginator,
-      onSearchChange: this.handleSearch,
-      sizePerPage: 10
-    };
+      super(props);
+      this.state = {
+          items: [],
+          page: 1,
+          fetchInfo: {
+              dataTotalSize: 10
+          },
+      };
   }
 
   componentDidMount() {
@@ -39,9 +30,10 @@ export default class extends React.Component {
   };
 
   loadData = () => {
+    // TODO: Improve searchCondition adding date and type fields
+    // TODO: dataTotalSize must be equal to the returned data size
     const { page, searchText } = this.state,
       offset = (page - 1) * 10,
-      // TODO: Improve searchCondition adding date and type fields
       searchCondition = !!searchText
         ? `\\"where\\": {\\"$or\\":[ {\\"id\\":{ \\"$iLike\\": \\"%${searchText}%\\"}}, {\\"name\\":{ \\"$iLike\\": \\"%${searchText}%\\"}} ]},`
         : ``,
@@ -58,9 +50,15 @@ export default class extends React.Component {
   };
 
   render() {
-    const { items, fetchInfo } = this.state;
+    const {items, fetchInfo, page} = this.state,
+        options = {
+            page,
+            sizePerPage: 10,
+            onPageChange: this.handlePaginator,
+            onSearchChange: this.handleSearch
+        };
 
-    return (
+      return (
       <Container responsive>
         <BootstrapTable
           class="table table-hover"
@@ -70,7 +68,7 @@ export default class extends React.Component {
           pagination
           remote={true}
           fetchInfo={fetchInfo}
-          options={this.options}
+          options={options}
           headerStyle={{ background: "#f2f2f2" }}
           bodyStyle={{ fontSize: 12 }}
           search
