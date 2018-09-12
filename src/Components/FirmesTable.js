@@ -4,17 +4,19 @@ import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
 import { Container } from "../Styles/Table";
 import auth from "./auth";
-
+import icon from "../Images/bchart.png";
+import Modal from "react-responsive-modal";
 export default class extends React.Component {
   constructor(props) {
-      super(props);
-      this.state = {
-          items: [],
-          page: 1,
-          fetchInfo: {
-              dataTotalSize: 10
-          },
-      };
+    super(props);
+    this.state = {
+      items: [],
+      page: 1,
+      open: false,
+      fetchInfo: {
+        dataTotalSize: 10
+      }
+    };
   }
 
   componentDidMount() {
@@ -49,18 +51,39 @@ export default class extends React.Component {
     });
   };
 
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+  ChartFormatter(item) {
+    return (
+      <button onClick={this.onOpenModal}>
+        <img src={icon} />
+        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+          <h2>Simple centered modal</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
+            hendrerit risus, sed porttitor quam.
+          </p>
+        </Modal>
+      </button>
+    );
+  }
+
   render() {
+    const { items, fetchInfo, page } = this.state,
+      options = {
+        page,
+        sizePerPage: 10,
+        onPageChange: this.handlePaginator,
+        onSearchChange: this.handleSearch
+      };
 
-    const {items, fetchInfo, page} = this.state,
-        options = {
-            page,
-            sizePerPage: 10,
-            onPageChange: this.handlePaginator,
-            onSearchChange: this.handleSearch
-        };
-
-      return (
-
+    return (
       <Container responsive>
         <BootstrapTable
           class="table table-hover"
@@ -93,6 +116,13 @@ export default class extends React.Component {
           </TableHeaderColumn>
           <TableHeaderColumn width="280px" dataField="type">
             Tipo
+          </TableHeaderColumn>
+          <TableHeaderColumn
+            width="280px"
+            dataField={"id"}
+            dataFormat={this.ChartFormatter}
+          >
+            Gráfico
           </TableHeaderColumn>
         </BootstrapTable>
       </Container>
