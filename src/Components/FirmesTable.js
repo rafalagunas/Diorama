@@ -13,6 +13,7 @@ export default class extends React.Component {
       items: [],
       page: 1,
       totalSize: 10,
+      searchText: '',
       fetchInfo: {
         dataTotalSize: 10
       }
@@ -20,6 +21,7 @@ export default class extends React.Component {
 
     this.options = {
       onPageChange: this.handlePaginator,
+      onSearchChange: this.handleSearch,
       sizePerPage: 10
     };
   }
@@ -37,9 +39,15 @@ export default class extends React.Component {
     );
   };
 
+  handleSearch = (searchText, colInfos, multiColumnSearch) => {
+    console.log(searchText);
+    this.setState({searchText}, this.loadData);
+  };
+
   loadData = () => {
     const { page } = this.state,
       offset = (page - 1) * 10,
+        // TODO: Apply search
       query = `{ hub(id: ${auth.getHubId()}) {numberOfEntities entities (selector: "{\\"limit\\": 10, \\"offset\\": ${offset}}"){ id name date type }}}`;
     auth.getData(query).then(res => {
       this.setState({
@@ -53,8 +61,6 @@ export default class extends React.Component {
 
   render() {
     const { items, fetchInfo } = this.state;
-
-    console.log(fetchInfo);
 
     return (
       <Container responsive>
