@@ -113,7 +113,7 @@ export default class extends React.Component {
           Open modal <img src={icon} />
         </button>
         <ChartModal open={open} onClose={this.onToggleModal}>
-          <span style={{ fontWeight: "bold" }}>Miles de pesos</span>
+          <span style={{ fontWeight: "bold" }}>Miles de pesos crudos</span>
           <ComposedChart
             width={600}
             height={400}
