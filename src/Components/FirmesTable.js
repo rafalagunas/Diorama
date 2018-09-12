@@ -2,7 +2,13 @@ import React, { Component } from "react";
 // with es6
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
-import { Container, Text, ChartModal } from "../Styles/Table";
+import {
+  Container,
+  Text,
+  ChartModal,
+  HorizontalTimeLine,
+  HorizontalText
+} from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
 import Modal from "react-responsive-modal";
@@ -28,7 +34,7 @@ export default class extends React.Component {
         dataTotalSize: 10
       },
       data: [
-        { date: "2014", CompraNet: 550, amt: 1400 },
+        { date: "2014-04-13", CompraNet: 550, amt: 1400 },
         { date: "2015", CompraNet: 550, amt: 1400 },
 
         { date: "2016", CompraNet: 1098, amt: 989 },
@@ -104,7 +110,6 @@ export default class extends React.Component {
         <button onClick={this.onToggleModal}>
           Open modal <img src={icon} />
         </button>
-
         <ChartModal open={open} onClose={this.onToggleModal}>
           <ComposedChart
             width={600}
@@ -120,8 +125,11 @@ export default class extends React.Component {
             <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
             <Line dataKey="SAT69B" stroke="#000" />
           </ComposedChart>
+          <HorizontalText> SFP</HorizontalText>
+          <HorizontalTimeLine />
+
           <Text> San Juán del Rio SA de CV</Text>
-        </ChartModal>
+        </ChartModal>{" "}
         <BootstrapTable
           class="table table-hover"
           data={items}

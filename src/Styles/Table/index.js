@@ -40,3 +40,12 @@ export const Text = styled.p`
   text-align: center;
   font-weight: bold;
 `;
+
+export const HorizontalTimeLine = styled.div`
+  border-bottom: 3px solid #4588ba;
+  width: 250px;
+  margin-left: 120px;
+`;
+export const HorizontalText = styled.p`
+  margin-left: 120px;
+`;
