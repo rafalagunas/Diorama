@@ -5,7 +5,9 @@ import moment from "moment";
 import { Container, Text, ChartModal } from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
+import Biglogo from "../Images/Biglogo.png";
 import Modal from "react-responsive-modal";
+import LoadingScreen from "react-loading-screen";
 import {
   ComposedChart,
   Line,
@@ -22,6 +24,7 @@ export default class extends React.Component {
     this.state = {
       items: [],
       page: 1,
+      loading: true,
       open: false,
       fetchInfo: {
         dataTotalSize: 10
@@ -37,8 +40,19 @@ export default class extends React.Component {
     };
   }
 
+  stateChange = () => {
+    const { loading, items } = this.state;
+
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      });
+    }, 1500);
+  };
+
   componentDidMount() {
     this.loadData();
+    this.stateChange();
   }
 
   handlePaginator = (page, sizePerPage) => {
@@ -124,46 +138,55 @@ export default class extends React.Component {
 
           <Text> San Juán del Rio SA de CV</Text>
         </ChartModal>{" "}
-        <BootstrapTable
-          class="table table-hover"
-          data={items}
-          version="4"
-          hover
-          pagination
-          remote={true}
-          fetchInfo={fetchInfo}
-          options={options}
-          headerStyle={{ background: "#f2f2f2" }}
-          bodyStyle={{ fontSize: 12 }}
-          search
-          exportCSV
-          csvFileName="firmes-sat"
-          searchPlaceholder="Haz una búsqueda..."
+        <LoadingScreen
+          loading={this.state.loading}
+          bgColor="#f1f1f1"
+          spinnerColor="#a91818"
+          textColor="#000"
+          logoSrc={Biglogo}
+          text="La Corrupción (Des)Medida"
         >
-          <TableHeaderColumn isKey dataField="id" width="40px">
-            RFC
-          </TableHeaderColumn>
-          <TableHeaderColumn width="280px" dataField="name">
-            Razón Social
-          </TableHeaderColumn>
-          <TableHeaderColumn
-            width="280px"
-            dataFormat={(cell, row) => moment(cell).format("YYYY-MM-DD")}
-            dataField="date"
+          <BootstrapTable
+            class="table table-hover"
+            data={items}
+            version="4"
+            hover
+            pagination
+            remote={true}
+            fetchInfo={fetchInfo}
+            options={options}
+            headerStyle={{ background: "#f2f2f2" }}
+            bodyStyle={{ fontSize: 12 }}
+            search
+            exportCSV
+            csvFileName="firmes-sat"
+            searchPlaceholder="Haz una búsqueda..."
           >
-            Fecha
-          </TableHeaderColumn>
-          <TableHeaderColumn width="280px" dataField="type">
-            Tipo
-          </TableHeaderColumn>
-          <TableHeaderColumn
-            width="280px"
-            dataField={"id"}
-            dataFormat={this.ChartFormatter}
-          >
-            Gráfico
-          </TableHeaderColumn>
-        </BootstrapTable>
+            <TableHeaderColumn isKey dataField="id" width="40px">
+              RFC
+            </TableHeaderColumn>
+            <TableHeaderColumn width="280px" dataField="name">
+              Razón Social
+            </TableHeaderColumn>
+            <TableHeaderColumn
+              width="280px"
+              dataFormat={(cell, row) => moment(cell).format("YYYY-MM-DD")}
+              dataField="date"
+            >
+              Fecha
+            </TableHeaderColumn>
+            <TableHeaderColumn width="280px" dataField="type">
+              Tipo
+            </TableHeaderColumn>
+            <TableHeaderColumn
+              width="280px"
+              dataField={"id"}
+              dataFormat={this.ChartFormatter}
+            >
+              Gráfico
+            </TableHeaderColumn>
+          </BootstrapTable>
+        </LoadingScreen>
       </Container>
     );
   }
