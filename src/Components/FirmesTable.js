@@ -33,9 +33,9 @@ export default class extends React.Component {
         { date: "2014-04-13(SFP)", CompraNet: 550, amt: 1400 },
         { date: "2015", CompraNet: 550, amt: 1400 },
 
-        { date: "2016", CompraNet: 1098, amt: 989 },
-        { date: "2017", SAT69B: 308 },
-        { date: "2017", TIME: -308 },
+        { date: "2016", CompraNet: 1098, amt: 989, TIME: -308 },
+        { date: "2017", SAT69B: 308, TIME: -308 },
+        {},
         { date: "2018", CompraNet: 1200, amt: 1228 }
       ]
     };
@@ -122,12 +122,12 @@ export default class extends React.Component {
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="date" domain={[0, 5000]} />
 
-            <YAxis />
+            <YAxis ticks={[0, 500, 1000, 1500, 2000]} />
             <Tooltip />
             <Legend verticalAlign="top" />
             <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
             <Line dataKey="SAT69B" stroke="#000" />
-            <Line dataKey="TIME" stroke="#000" />
+            <Line dataKey="TIME" stroke="red" />
           </ComposedChart>
 
           <Text> San Juán del Rio SA de CV</Text>
