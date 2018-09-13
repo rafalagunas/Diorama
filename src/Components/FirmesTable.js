@@ -119,12 +119,7 @@ export default class extends React.Component {
         </button>
         <ChartModal open={open} onClose={this.onToggleModal}>
           <span style={{ fontWeight: "bold" }}>Miles de pesos corrientes</span>
-          <ComposedChart
-            width={600}
-            height={400}
-            data={this.state.data}
-            margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-          >
+          <ComposedChart width={600} height={400} data={this.state.data}>
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="date" />
 
@@ -133,7 +128,6 @@ export default class extends React.Component {
             <Legend verticalAlign="top" />
             <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
             <Line dataKey="SAT69B" stroke="#000" />
-            <Line dataKey="TIME" stroke="#000" />
           </ComposedChart>
 
           <Text> San Juán del Rio SA de CV</Text>
