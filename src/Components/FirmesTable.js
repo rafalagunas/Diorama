@@ -35,7 +35,6 @@ export default class extends React.Component {
 
         { date: "2016", CompraNet: 1098, amt: 989, TIME: -308 },
         { date: "2017", SAT69B: 308, TIME: -308 },
-        {},
         { date: "2018", CompraNet: 1200, amt: 1228 }
       ]
     };
