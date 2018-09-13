@@ -35,6 +35,7 @@ export default class extends React.Component {
 
         { date: "2016", CompraNet: 1098, amt: 989 },
         { date: "2017", SAT69B: 308 },
+        { date: "2017", TIME: -308 },
         { date: "2018", CompraNet: 1200, amt: 1228 }
       ]
     };
@@ -121,13 +122,14 @@ export default class extends React.Component {
           <span style={{ fontWeight: "bold" }}>Miles de pesos corrientes</span>
           <ComposedChart width={600} height={400} data={this.state.data}>
             <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="date" />
+            <XAxis dataKey="date" domain={[0, 5000]} />
 
             <YAxis />
             <Tooltip />
             <Legend verticalAlign="top" />
             <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
             <Line dataKey="SAT69B" stroke="#000" />
+            <Line dataKey="TIME" stroke="#000" />
           </ComposedChart>
 
           <Text> San Juán del Rio SA de CV</Text>
