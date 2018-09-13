@@ -30,10 +30,10 @@ export default class extends React.Component {
         dataTotalSize: 10
       },
       data: [
-        { date: "2014-04-13(SFP)", CompraNet: 550, amt: 1400 },
+        { date: "2014", CompraNet: 550, amt: 1400 },
         { date: "2015", CompraNet: 550, amt: 1400 },
 
-        { date: "2016", CompraNet: 1098, amt: 989, TIME: -308 },
+        { date: "13-04-2016(SFP)", CompraNet: 1098, amt: 989, TIME: -308 },
         { date: "2017", SAT69B: 308, TIME: -308 },
         { date: "2018", CompraNet: 1200, amt: 1228 }
       ]
