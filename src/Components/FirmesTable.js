@@ -6,7 +6,6 @@ import { Container, Text, ChartModal } from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
 import Biglogo from "../Images/Biglogo.png";
-import Modal from "react-responsive-modal";
 import LoadingScreen from "react-loading-screen";
 import {
   ComposedChart,
