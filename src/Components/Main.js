@@ -14,12 +14,6 @@ class App extends Component {
           <Title> FIRMES SAT</Title>
         </TitleDiv>{" "}
         <FirmesTable />
-        <TitleDiv>
-          <Title> Animal Político</Title>
-        </TitleDiv>
-        <TitleDiv>
-          <Title> FIRMES SAT y Animal Político</Title>
-        </TitleDiv>
       </div>
     );
   }
