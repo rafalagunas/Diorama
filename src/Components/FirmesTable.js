@@ -42,8 +42,6 @@ export default class extends React.Component {
   }
 
   stateChange = () => {
-    const { loading, items } = this.state;
-
     setTimeout(() => {
       this.setState({
         loading: false
