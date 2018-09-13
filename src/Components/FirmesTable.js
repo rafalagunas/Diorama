@@ -24,6 +24,9 @@ import {
   Legend,
   Bar
 } from "recharts";
+
+import "./styles.css";
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -101,14 +104,26 @@ export default class extends React.Component {
         <RedButton onClick={() => this.onToggleModal(item)} color="danger">
           Graficar
           <ChartModal open={this.state.open} onClose={this.onToggleModal}>
-            <span style={{ fontWeight: "bold" }}>
+            <span
+              style={{
+                fontWeight: "bold",
+                fontFamily: "IBM Plex Mono !important"
+              }}
+            >
               Miles de pesos corrientes
             </span>
             <ComposedChart width={600} height={400} data={this.state.data}>
               <CartesianGrid stroke="#f5f5f5" />
-              <XAxis dataKey="date" domain={[0, 5000]} />
+              <XAxis
+                tick={{ fontFamily: "IBM Plex Mono!important" }}
+                dataKey="date"
+                domain={[0, 5000]}
+              />
 
-              <YAxis ticks={[0, 500, 1000, 1500, 2000]} />
+              <YAxis
+                tick={{ fontFamily: "IBM Plex Mono!important" }}
+                ticks={[0, 500, 1000, 1500, 2000]}
+              />
               <Tooltip />
               <Legend verticalAlign="top" />
               <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />

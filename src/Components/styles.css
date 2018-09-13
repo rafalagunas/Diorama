@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+html,
+body {
+  font-family: "IBM Plex Mono" !important;
+}
+
+.btn-danger:hover {
+  text-decoration: none;
+  background-color: #931e2f;
+}
+
+.md {
+  color: #931e2f;
+}
