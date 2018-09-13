@@ -152,8 +152,6 @@ export default class extends React.Component {
             headerStyle={{ background: "#f2f2f2" }}
             bodyStyle={{ fontSize: 12 }}
             search
-            exportCSV
-            csvFileName="firmes-sat"
             searchPlaceholder="Haz una búsqueda..."
           >
             <TableHeaderColumn isKey dataField="id" width="40px">
