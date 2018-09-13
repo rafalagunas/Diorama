@@ -7,6 +7,7 @@ import auth from "./auth";
 import icon from "../Images/bchart.png";
 import Biglogo from "../Images/Biglogo.png";
 import LoadingScreen from "react-loading-screen";
+import Modal from "react-responsive-modal";
 import {
   ComposedChart,
   Line,
@@ -84,6 +85,29 @@ export default class extends React.Component {
     this.setState({ open: !this.state.open });
   };
 
+  ChartFormatter = item => {
+    return (
+      <button onClick={this.onToggleModal}>
+        <img src={icon} />
+        <ChartModal open={this.state.open} onClose={this.onToggleModal}>
+          <span style={{ fontWeight: "bold" }}>Miles de pesos corrientes</span>
+          <ComposedChart width={600} height={400} data={this.state.data}>
+            <CartesianGrid stroke="#f5f5f5" />
+            <XAxis dataKey="date" domain={[0, 5000]} />
+
+            <YAxis ticks={[0, 500, 1000, 1500, 2000]} />
+            <Tooltip />
+            <Legend verticalAlign="top" />
+            <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
+            <Line dataKey="SAT69B" stroke="#000" />
+            <Line dataKey="TIME" stroke="red" />
+          </ComposedChart>
+
+          <Text> San Juán del Rio SA de CV</Text>
+        </ChartModal>{" "}
+      </button>
+    );
+  };
   render() {
     const { items, fetchInfo, page, open } = this.state,
       options = {
@@ -98,7 +122,7 @@ export default class extends React.Component {
         <button onClick={this.onToggleModal}>
           Open modal <img src={icon} alt="icon" />
         </button>
-        <ChartModal open={open} onClose={this.onToggleModal}>
+        <ChartModal open={this.state.open} onClose={this.onToggleModal}>
           <span style={{ fontWeight: "bold" }}>Miles de pesos corrientes</span>
           <ComposedChart width={600} height={400} data={this.state.data}>
             <CartesianGrid stroke="#f5f5f5" />
