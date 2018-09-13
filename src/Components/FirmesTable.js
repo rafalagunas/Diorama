@@ -85,22 +85,6 @@ export default class extends React.Component {
     this.setState({ open: !this.state.open });
   };
 
-  ChartFormatter(item) {
-    return (
-      <button onClick={this.onOpenModal}>
-        <img src={icon} alt="icon" />
-        <Modal open={this.state.open} onClose={this.onCloseModal}>
-          <h2>Simple centered modal</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-            hendrerit risus, sed porttitor quam.
-          </p>
-        </Modal>
-      </button>
-    );
-  }
-
   render() {
     const { items, fetchInfo, page, open } = this.state,
       options = {
