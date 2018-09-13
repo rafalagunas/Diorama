@@ -5,7 +5,7 @@ const Welcome = props => {
     <div>
       <Jumbotron fluid>
         <Container fluid>
-          <h1 className="md">La corrupción (des)medida</h1>
+          <h1 className="md">Diorama</h1>
           <p className="lead">
             Esta es una herramienta que hará cosas chilas con una base de datos
             bien chila. CORRUPTOS TEMBLAD. Para poder empezar a usar la

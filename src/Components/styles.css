@@ -19,3 +19,24 @@ body {
 .md {
   color: #931e2f;
 }
+
+.page-item.active {
+  color: #000;
+  background-color: #931e2f;
+  border-color: #931e2f;
+}
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: #931e2f !important;
+  border-color: #931e2f !important;
+}
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #000 !important;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}

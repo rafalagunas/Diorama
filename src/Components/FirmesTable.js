@@ -154,7 +154,7 @@ export default class extends React.Component {
           spinnerColor="#a91818"
           textColor="#000"
           logoSrc={Biglogo}
-          text="La Corrupción (Des)Medida"
+          text="Diorama"
         >
           <BootstrapTable
             class="table table-hover"
