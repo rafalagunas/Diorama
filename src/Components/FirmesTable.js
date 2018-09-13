@@ -2,12 +2,18 @@ import React from "react";
 // with es6
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
-import { Container, Text, ChartModal } from "../Styles/Table";
+import {
+  Container,
+  Text,
+  ChartModal,
+  RedButton,
+  ChartContainer
+} from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
 import Biglogo from "../Images/Biglogo.png";
 import LoadingScreen from "react-loading-screen";
-import Modal from "react-responsive-modal";
+import { Button } from "reactstrap";
 import {
   ComposedChart,
   Line,
@@ -84,32 +90,36 @@ export default class extends React.Component {
   onToggleModal = item => {
     // TODO: Call API with item as prop}
     if (item.length == 12) {
-      console.log(item);
+      console.log(item + "apurate tino");
     }
     this.setState({ open: !this.state.open });
   };
 
   ChartFormatter = item => {
     return (
-      <button onClick={() => this.onToggleModal(item)}>
-        <img src={icon} />
-        <ChartModal open={this.state.open} onClose={this.onToggleModal}>
-          <span style={{ fontWeight: "bold" }}>Miles de pesos corrientes</span>
-          <ComposedChart width={600} height={400} data={this.state.data}>
-            <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="date" domain={[0, 5000]} />
+      <ChartContainer>
+        <RedButton onClick={() => this.onToggleModal(item)} color="danger">
+          Graficar
+          <ChartModal open={this.state.open} onClose={this.onToggleModal}>
+            <span style={{ fontWeight: "bold" }}>
+              Miles de pesos corrientes
+            </span>
+            <ComposedChart width={600} height={400} data={this.state.data}>
+              <CartesianGrid stroke="#f5f5f5" />
+              <XAxis dataKey="date" domain={[0, 5000]} />
 
-            <YAxis ticks={[0, 500, 1000, 1500, 2000]} />
-            <Tooltip />
-            <Legend verticalAlign="top" />
-            <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
-            <Line dataKey="SAT69B" stroke="#000" />
-            <Line dataKey="TIME" stroke="red" />
-          </ComposedChart>
+              <YAxis ticks={[0, 500, 1000, 1500, 2000]} />
+              <Tooltip />
+              <Legend verticalAlign="top" />
+              <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
+              <Line dataKey="SAT69B" stroke="#000" />
+              <Line dataKey="TIME" stroke="red" />
+            </ComposedChart>
 
-          <Text> San Juán del Rio SA de CV</Text>
-        </ChartModal>{" "}
-      </button>
+            <Text> San Juán del Rio SA de CV</Text>
+          </ChartModal>{" "}
+        </RedButton>
+      </ChartContainer>
     );
   };
   render() {

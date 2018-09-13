@@ -1,7 +1,23 @@
 import styled from "styled-components";
 import Modal from "react-responsive-modal";
+import { Button } from "reactstrap";
+export const RedButton = styled(Button)`
+  text-align: center;
+`;
+export const ChartContainer = styled.div`
+  margin: 0 auto;
+  .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    text-align: center;
+    margin: 0 auto;
+  }
+`;
+
 export const Container = styled.div`
   padding-top: 30px;
+
   .react-bs-table-container {
     .react-bs-table table th {
       white-space: pre-line;
