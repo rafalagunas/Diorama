@@ -1,15 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 // with es6
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
-import {
-  Container,
-  Text,
-  ChartModal,
-  HorizontalTimeLine,
-  HorizontalText,
-  Duration
-} from "../Styles/Table";
+import { Container, Text, ChartModal } from "../Styles/Table";
 import auth from "./auth";
 import icon from "../Images/bchart.png";
 import Modal from "react-responsive-modal";
@@ -21,10 +14,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Area,
   Bar
 } from "recharts";
-import { Row } from "reactstrap";
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +76,7 @@ export default class extends React.Component {
   ChartFormatter(item) {
     return (
       <button onClick={this.onOpenModal}>
-        <img src={icon} />
+        <img src={icon} alt="icon" />
         <Modal open={this.state.open} onClose={this.onCloseModal}>
           <h2>Simple centered modal</h2>
           <p>
@@ -110,7 +101,7 @@ export default class extends React.Component {
     return (
       <Container responsive>
         <button onClick={this.onToggleModal}>
-          Open modal <img src={icon} />
+          Open modal <img src={icon} alt="icon" />
         </button>
         <ChartModal open={open} onClose={this.onToggleModal}>
           <span style={{ fontWeight: "bold" }}>Miles de pesos corrientes</span>
@@ -128,12 +119,9 @@ export default class extends React.Component {
             <Legend verticalAlign="top" />
             <Bar dataKey="CompraNet" barSize={5} fill="#ff3d4e" />
             <Line dataKey="SAT69B" stroke="#000" />
+            <Line dataKey="TIME" stroke="#000" />
           </ComposedChart>
-          <Row>
-            <HorizontalText> SFP</HorizontalText>
-            <HorizontalTimeLine />
-          </Row>{" "}
-          <Duration>2.5 Años </Duration>
+
           <Text> San Juán del Rio SA de CV</Text>
         </ChartModal>{" "}
         <BootstrapTable
