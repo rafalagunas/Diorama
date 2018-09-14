@@ -13,6 +13,7 @@ export const LeftDiv = styled.div`
 
 export const RightDiv = styled.div`
   width: 38%;
+  padding-left: 25px;
 `;
 
 export const GreyText = styled.span`
