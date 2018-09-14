@@ -96,9 +96,9 @@ export default class Footer extends React.Component {
           <GreyBoldText>
             En alianza con: <br />
           </GreyBoldText>
-          <img src={animal} height="100" width="260" alt="sss" />
-          <br />
-          <img src={tec} height="100" width="260" alt="sss" />
+          <img src={animal} height="50" width="120" alt="sss" />
+          <br /> <br />
+          <img src={tec} height="50" width="120" alt="sss" />
         </RightDiv>
       </MainDiv>
     );

@@ -7,12 +7,12 @@ export const MainDiv = styled(Row)`
   max-width: 100%;
 `;
 export const LeftDiv = styled.div`
-  width: 70%;
+  width: 62%;
   padding-left: 5%;
 `;
 
 export const RightDiv = styled.div`
-  width: 30%;
+  width: 38%;
 `;
 
 export const GreyText = styled.span`
