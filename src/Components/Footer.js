@@ -17,7 +17,7 @@ import {
   MainDiv,
   GreyBoldText
 } from "../Styles/Footer";
-
+import logo from "../Images/logo.png";
 export default class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -39,8 +39,10 @@ export default class Footer extends React.Component {
         <LeftDiv>
           <RedBoldText>Diorama </RedBoldText>
           <GreyText>
-            es una herramienta para contar historias de <br /> MCCI Mexicanos
-            Contra la Corrupción y la Impunidad
+            es una herramienta para contar historias de <br />{" "}
+            <b> MCCI Mexicanos Contra la Corrupción y la Impunidad</b>
+            <br />
+            <img src={logo} height="15" width="60" alt="sss" />
           </GreyText>
           <div>
             <GreyText>
