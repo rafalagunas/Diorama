@@ -1,5 +1,5 @@
 import React from "react";
-// with es6
+
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
 import {

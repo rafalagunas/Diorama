@@ -1,4 +1,39 @@
-# La Corrupción Desmedida
+# Diorama
+
+###### ¿Qué es?
+
+** Diorama es una aplicación que permite a los usuarios **
+
+1. Identificar
+   nombres propios de
+   personas y empresas
+   dentro de los textos
+   de auditorías y
+   noticias
+   para poder cruzar
+   información de
+   distintas fuentes.
+
+2. Clasificamos
+   62 mil
+   reportajes y
+   noticias
+   por medio del
+   análisis de
+   lenguaje natural
+   para quedarnos
+   con 6,700 notas
+   relacionadas con
+   hechos de
+   corrupción.
+
+3. Procesamos texto
+   de auditorías en
+   PDF,
+   lo pasamos a una
+   base (no relacional) , y
+   lo combinamos con
+   otros datos.
 
 ## Deployment
 
