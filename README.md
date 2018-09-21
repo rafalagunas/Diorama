@@ -46,7 +46,7 @@
 2. Desarrollar un módulo que permita a los periodistas, académicos e investigadores en general, obtener información y generarla a través de nuevos formatos estándares a nivel internacional.
 3. Mejorar y pulir el procesamiento de datos y realizar un analizador de lenguaje natural cada vez más efectivo.
 
-#Información Técnica
+# Información Técnica
 
 ## Deployment
 
