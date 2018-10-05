@@ -5,6 +5,7 @@ import FirmesTable from "./FirmesTable";
 import Footer from "./Footer/index";
 import SecondSection from "./SecondSection";
 import ThirdSection from "./ThirdSection";
+import FourthSection from "./FourthSection";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Welcome />
         <SecondSection />
         <ThirdSection />
+        <FourthSection />
         <FirmesTable />
         <Footer />
       </div>

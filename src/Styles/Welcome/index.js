@@ -15,6 +15,7 @@ export const Text = styled.p`
 `;
 
 export const Container = styled.div`
+  padding-top: 5%;
   margin: 0 auto;
   justify-content: center;
 `;
