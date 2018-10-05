@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Row } from "reactstrap";
 import { Button } from "antd";
-export const DragContainer = styled.h1`
-  width: 60%;
+export const CardContainer = styled.h1`
+  padding-top: 50px;
+  width: 70%;
   height: 50%;
   margin: 0 auto;
 `;
@@ -29,4 +30,10 @@ export const Text = styled.p`
   font-size: 25px;
 
   color: #931e2f !important;
+`;
+
+export const GreyText = styled.p`
+  text-align: center;
+  font-size: 20px;
+  color: grey !important;
 `;

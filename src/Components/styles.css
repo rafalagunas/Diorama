@@ -140,3 +140,7 @@ body {
   padding: 16px 0;
   background: #fafafa;
 }
+
+.ant-card-bordered {
+  border: 1px solid grey !important;
+}

@@ -1,36 +1,42 @@
 import React, { Component } from "react";
-import { Upload, Icon, message } from "antd";
+import { Upload, Icon, message, Card } from "antd";
 import {
-  DragContainer,
+  CardContainer,
   MainContainer,
   ButtonContainer,
   RedButton,
-  Text
+  Text,
+  GreyText
 } from "../../Styles/FourthSection";
+import "../styles.css";
 
-const Dragger = Upload.Dragger;
-
-const props = {
-  name: "file",
-  multiple: true,
-  action: "//jsonplaceholder.typicode.com/posts/",
-  onChange(info) {
-    const status = info.file.status;
-    if (status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (status === "done") {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  }
-};
 class FourthSection extends Component {
   render() {
     return (
       <MainContainer>
         <Text className="lead">Ejemplos</Text>
+        <CardContainer>
+          <Card style={{ justifyContent: "center" }}>
+            <GreyText>
+              1. La empresa San Juan del Río S.A. de C.V. es una empresa que
+              entre 2014 y 2018 ha tenido cuatro contratos con el gobierno
+              federal (con la SFP, PGR, SEP y SEDATU); el último incluso después
+              de haber sido boletinada por el SAT como empresa fantasma (CFF
+              art.69-b). Ésta y otras historias aquí.
+            </GreyText>
+          </Card>
+        </CardContainer>
+        <CardContainer>
+          <Card style={{ justifyContent: "center" }}>
+            <GreyText>
+              1. La empresa San Juan del Río S.A. de C.V. es una empresa que
+              entre 2014 y 2018 ha tenido cuatro contratos con el gobierno
+              federal (con la SFP, PGR, SEP y SEDATU); el último incluso después
+              de haber sido boletinada por el SAT como empresa fantasma (CFF
+              art.69-b). Ésta y otras historias aquí.
+            </GreyText>
+          </Card>
+        </CardContainer>
       </MainContainer>
     );
   }
