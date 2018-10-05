@@ -41,6 +41,8 @@ export const ButtonDiv = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+  padding-top: 30px;
+  padding-left: 40px;
   width: 180px;
   margin: 0 auto;
 `;

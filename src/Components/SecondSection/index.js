@@ -28,11 +28,10 @@ const SecondSection = props => {
             style={{ width: 200, height: 50 }}
           />
         </SearchBoxContainer>
-        <ButtonDiv>
-          <ButtonContainer>
-            <RedButton>Generar</RedButton>
-          </ButtonContainer>
-        </ButtonDiv>
+
+        <ButtonContainer>
+          <RedButton>Buscar</RedButton>
+        </ButtonContainer>
       </Container>
     </MainContainer>
   );
