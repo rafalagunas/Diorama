@@ -31,10 +31,12 @@ export const ButtonRow = styled(Row)`
 `;
 
 export const ButtonContainer = styled.div`
+  padding-top: 15px;
   width: 180px;
 `;
 
 export const RedButton = styled(Button)`
+  padding-top: 15px;
   margin: 0 auto;
   width: 100px;
   height: 40px !important;
