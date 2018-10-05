@@ -42,9 +42,10 @@ export const ButtonDiv = styled.div`
 
 export const ButtonContainer = styled.div`
   padding-top: 30px;
-  padding-left: 40px;
+  padding-left: 45px;
   width: 180px;
   margin: 0 auto;
+  padding-bottom: 15%;
 `;
 
 export const RedButton = styled(Button)`

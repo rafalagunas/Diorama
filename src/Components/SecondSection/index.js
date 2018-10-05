@@ -23,9 +23,9 @@ const SecondSection = props => {
         <Text className="lead">Busca líneas de tiempo,redes y reportes</Text>
         <SearchBoxContainer>
           <Search
-            placeholder="input search text"
+            placeholder="introduce tu búsqueda"
             onSearch={value => console.log(value)}
-            style={{ width: 200, height: 50 }}
+            style={{ width: 220, height: 50 }}
           />
         </SearchBoxContainer>
 
