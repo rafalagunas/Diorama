@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Welcome from "./Welcome";
+import Header from "./Header/index";
+import Welcome from "./Welcome/index";
 import FirmesTable from "./FirmesTable";
-import Footer from "./Footer";
+import Footer from "./Footer/index";
 
 class App extends Component {
   render() {

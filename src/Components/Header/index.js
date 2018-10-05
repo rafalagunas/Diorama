@@ -7,9 +7,10 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import logo from "../Images/logo.png";
-import { NavContainer } from "../Styles/Header";
-export default class Example extends React.Component {
+import logo from "../../Images/logo.png";
+import { NavContainer } from "../../Styles/Header";
+
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,3 +51,5 @@ export default class Example extends React.Component {
     );
   }
 }
+
+export default Header;

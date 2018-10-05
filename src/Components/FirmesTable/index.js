@@ -8,10 +8,10 @@ import {
   ChartModal,
   RedButton,
   ChartContainer
-} from "../Styles/Table";
+} from "../../Styles/Table";
 import auth from "./auth";
-import icon from "../Images/bchart.png";
-import Biglogo from "../Images/Biglogo.png";
+import icon from "../../Images/bchart.png";
+import Biglogo from "../../Images/Biglogo.png";
 import LoadingScreen from "react-loading-screen";
 
 import {
@@ -25,9 +25,9 @@ import {
   Bar
 } from "recharts";
 
-import "./styles.css";
+import "../styles.css";
 
-export default class extends React.Component {
+class FirmesTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -149,7 +149,7 @@ export default class extends React.Component {
     return (
       <Container responsive>
         <LoadingScreen
-          loading={this.state.loading}
+          loading={false}
           bgColor="#f1f1f1"
           spinnerColor="#a91818"
           textColor="#000"
@@ -199,3 +199,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default FirmesTable;

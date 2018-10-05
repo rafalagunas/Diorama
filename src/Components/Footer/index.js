@@ -7,8 +7,8 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import animal from "../Images/animal.png";
-import tec from "../Images/tecmty.jpeg";
+import animal from "../../Images/animal.png";
+import tec from "../../Images/tecmty.jpeg";
 import {
   LeftDiv,
   RightDiv,
@@ -16,8 +16,8 @@ import {
   GreyText,
   MainDiv,
   GreyBoldText
-} from "../Styles/Footer";
-import logo from "../Images/logo.png";
+} from "../../Styles/Footer";
+import logo from "../../Images/logo.png";
 export default class Footer extends React.Component {
   constructor(props) {
     super(props);

@@ -2,10 +2,10 @@ import React, { Component } from "react";
 // with es6
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import moment from "moment";
-import { Container } from "../Styles/Table";
+import { Container } from "../../Styles/Table";
 import auth from "./auth";
 
-export default class extends React.Component {
+class AnimalPoliticoTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -98,3 +98,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default AnimalPoliticoTable;
