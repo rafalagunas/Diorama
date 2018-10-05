@@ -3,6 +3,7 @@ import Header from "./Header/index";
 import Welcome from "./Welcome/index";
 import FirmesTable from "./FirmesTable";
 import Footer from "./Footer/index";
+import SecondSection from "./SecondSection";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <div>
         <Header />
         <Welcome />
-
+        <SecondSection />
         <FirmesTable />
         <Footer />
       </div>
