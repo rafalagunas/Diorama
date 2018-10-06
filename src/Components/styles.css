@@ -127,7 +127,7 @@ body {
 }
 
 .ant-upload.ant-upload-drag {
-  border: 1px dashed #d9d9d9;
+  border: 1px dashed #931e2f !important;
   -webkit-transition: border-color 0.3s;
   -o-transition: border-color 0.3s;
   transition: border-color 0.3s;
@@ -143,4 +143,12 @@ body {
 
 .ant-card-bordered {
   border: 1px solid grey !important;
+}
+
+.anticon-inbox:before {
+  content: "\E67A";
+  color: #931e2f !important;
+}
+ant-upload.ant-upload-drag:not(.ant-upload-disabled):hover {
+  border-color: #931e2f !important;
 }
