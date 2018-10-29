@@ -76,7 +76,12 @@ class FirmesTable extends React.Component {
 
     FIRMES(size, page).then(response => {
       console.log(response);
-      this.setState({ items: response });
+      this.setState({
+        items: response,
+        fetchInfo: {
+          dataTotalSize: 20000
+        }
+      });
     });
   };
 
@@ -160,7 +165,7 @@ class FirmesTable extends React.Component {
             search
             searchPlaceholder="Haz una búsqueda..."
           >
-            <TableHeaderColumn isKey dataField="_id" width="40px">
+            <TableHeaderColumn isKey dataField="_id">
               RFC
             </TableHeaderColumn>
             <TableHeaderColumn width="280px" dataField="razon_social">
