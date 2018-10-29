@@ -1,7 +1,7 @@
 import "whatwg-fetch";
 
 export const FIRMES = (pageSize, numPage) => {
-  fetch(
+  return fetch(
     "https://contracts-mx.herokuapp.com/blacklist/" + pageSize + "/" + numPage,
     {
       method: "POST",
@@ -13,13 +13,14 @@ export const FIRMES = (pageSize, numPage) => {
       }
     }
   )
-    .then(response => {
-      return response.json;
+    .then(function(response) {
+      return response.json();
     })
-    .then(data => {
-      return data;
-    })
-    .catch(e => {
-      alert("Error");
+    .then(myJson => {
+      if (myJson !== undefined) {
+        return myJson;
+        //callback(myJson);
+        //return myJson.value;
+      }
     });
 };

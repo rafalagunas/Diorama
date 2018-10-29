@@ -58,24 +58,6 @@ class FirmesTable extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://contracts-mx.herokuapp.com/blacklist/" + 10 + "/" + 1, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    })
-      .then(response => {
-        return response.json;
-      })
-      .then(data => {
-        console.log(data);
-      })
-      .catch(e => {
-        alert("Error");
-      });
     this.loadData();
     this.stateChange();
   }
@@ -89,9 +71,13 @@ class FirmesTable extends React.Component {
   };
 
   loadData = () => {
-    const { page } = this.state;
+    const { page, items } = this.state;
     let size = 10;
-    FIRMES(size, page);
+
+    FIRMES(size, page).then(response => {
+      console.log(response);
+      this.setState({ items: response });
+    });
   };
 
   onToggleModal = item => {
@@ -174,20 +160,20 @@ class FirmesTable extends React.Component {
             search
             searchPlaceholder="Haz una búsqueda..."
           >
-            <TableHeaderColumn isKey dataField="id" width="40px">
+            <TableHeaderColumn isKey dataField="_id" width="40px">
               RFC
             </TableHeaderColumn>
-            <TableHeaderColumn width="280px" dataField="name">
+            <TableHeaderColumn width="280px" dataField="razon_social">
               Razón Social
             </TableHeaderColumn>
             <TableHeaderColumn
               width="280px"
               dataFormat={(cell, row) => moment(cell).format("YYYY-MM-DD")}
-              dataField="date"
+              dataField="Fecha_pp"
             >
               Fecha
             </TableHeaderColumn>
-            <TableHeaderColumn width="280px" dataField="type">
+            <TableHeaderColumn width="280px" dataField="tipo_persona">
               Tipo
             </TableHeaderColumn>
             <TableHeaderColumn
