@@ -9,7 +9,6 @@ import {
   RedButton,
   ChartContainer
 } from "../../Styles/Table";
-import auth from "./auth";
 import icon from "../../Images/bchart.png";
 import Biglogo from "../../Images/Biglogo.png";
 import LoadingScreen from "react-loading-screen";
@@ -26,6 +25,7 @@ import {
 } from "recharts";
 
 import "../styles.css";
+import { FIRMES } from "./auth";
 
 class FirmesTable extends React.Component {
   constructor(props) {
@@ -58,6 +58,24 @@ class FirmesTable extends React.Component {
   };
 
   componentDidMount() {
+    fetch("https://contracts-mx.herokuapp.com/blacklist/" + 10 + "/" + 1, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        return response.json;
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(e => {
+        alert("Error");
+      });
     this.loadData();
     this.stateChange();
   }
@@ -71,23 +89,9 @@ class FirmesTable extends React.Component {
   };
 
   loadData = () => {
-    // TODO: Improve searchCondition adding date and type fields
-    // TODO: dataTotalSize must be equal to the returned data size
-    const { page, searchText } = this.state,
-      offset = (page - 1) * 10,
-      searchCondition = !!searchText
-        ? `\\"where\\": {\\"$or\\":[ {\\"id\\":{ \\"$iLike\\": \\"%${searchText}%\\"}}, {\\"name\\":{ \\"$iLike\\": \\"%${searchText}%\\"}} ]},`
-        : ``,
-      query = `{ hub(id: ${auth.getHubId()}) {numberOfEntities entities (selector: "{ ${searchCondition} \\"limit\\": 10, \\"offset\\": ${offset}}"){ id name date type }}}`;
-
-    auth.getData(query).then(res => {
-      this.setState({
-        items: res.data.hub.entities,
-        fetchInfo: {
-          dataTotalSize: res.data.hub.numberOfEntities
-        }
-      });
-    });
+    const { page } = this.state;
+    let size = 10;
+    FIRMES(size, page);
   };
 
   onToggleModal = item => {

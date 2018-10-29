@@ -1,18 +1,25 @@
-import rp from "request-promise";
+import "whatwg-fetch";
 
-export default {
-  getHubId() {
-    return 1;
-  },
-  getHost() {
-    return "http://10.25.35.112:3001";
-  },
-  getData(query) {
-    return rp({
-      method: "GET",
-      uri: `${this.getHost()}/graphql`,
-      qs: { query },
-      json: true
+export const FIRMES = (pageSize, numPage) => {
+  fetch(
+    "https://contracts-mx.herokuapp.com/blacklist/" + pageSize + "/" + numPage,
+    {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    }
+  )
+    .then(response => {
+      return response.json;
+    })
+    .then(data => {
+      return data;
+    })
+    .catch(e => {
+      alert("Error");
     });
-  }
 };
