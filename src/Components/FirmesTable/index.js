@@ -25,7 +25,7 @@ import {
 } from "recharts";
 
 import "../styles.css";
-import { FIRMES } from "./auth";
+import { FIRMES, CONTRACTS } from "./auth";
 
 class FirmesTable extends React.Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class FirmesTable extends React.Component {
     let size = 10;
 
     FIRMES(size, page).then(response => {
-      console.log(response);
+      //console.log(response);
       this.setState({
         items: response,
         fetchInfo: {
@@ -87,9 +87,16 @@ class FirmesTable extends React.Component {
 
   onToggleModal = item => {
     // TODO: Call API with item as prop}
-    if (item.length == 12) {
-      console.log(item + "apurate tino");
-    }
+    console.log(item);
+    var it = JSON.stringify({ razon_social: item });
+    var form = new FormData();
+
+    form.append("entityName", item);
+
+    CONTRACTS(it).then(response => {
+      console.log(response);
+    });
+
     this.setState({ open: !this.state.open });
   };
 
@@ -98,7 +105,7 @@ class FirmesTable extends React.Component {
       <ChartContainer>
         <RedButton onClick={() => this.onToggleModal(item)} color="danger">
           Graficar
-          <ChartModal open={this.state.open} onClose={this.onToggleModal}>
+          <ChartModal open={false} onClose={this.onToggleModal}>
             <span
               style={{
                 fontWeight: "bold",
@@ -168,23 +175,19 @@ class FirmesTable extends React.Component {
             <TableHeaderColumn isKey dataField="_id">
               RFC
             </TableHeaderColumn>
-            <TableHeaderColumn width="280px" dataField="razon_social">
+            <TableHeaderColumn dataField="razon_social">
               Razón Social
             </TableHeaderColumn>
             <TableHeaderColumn
-              width="280px"
               dataFormat={(cell, row) => moment(cell).format("YYYY-MM-DD")}
               dataField="Fecha_pp"
             >
               Fecha
             </TableHeaderColumn>
-            <TableHeaderColumn width="280px" dataField="tipo_persona">
-              Tipo
-            </TableHeaderColumn>
+            <TableHeaderColumn dataField="tipo_persona">Tipo</TableHeaderColumn>
             <TableHeaderColumn
-              width="280px"
-              dataField={"id"}
-              dataFormat={this.ChartFormatter}
+              dataField={"razon_social"}
+              dataFormat={items => this.ChartFormatter(items)}
             >
               Gráfico
             </TableHeaderColumn>

@@ -24,3 +24,18 @@ export const FIRMES = (pageSize, numPage) => {
       }
     });
 };
+
+export const CONTRACTS = form => {
+  return fetch("https://contracts-mx.herokuapp.com/contracts", {
+    method: "POST",
+    mode: "cors",
+    data: "entityName:" + form,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  }).then(function(response) {
+    return response;
+  });
+};
