@@ -88,13 +88,11 @@ class FirmesTable extends React.Component {
   onToggleModal = item => {
     // TODO: Call API with item as prop}
     console.log(item);
-    var it = JSON.stringify({ razon_social: item });
-    var form = new FormData();
+    var obj = { entityName: item };
+    var data = JSON.stringify(obj);
 
-    form.append("entityName", item);
-
-    CONTRACTS(it).then(response => {
-      console.log(response);
+    CONTRACTS(data).then(response => {
+      console.log(response + "");
     });
 
     this.setState({ open: !this.state.open });

@@ -29,13 +29,21 @@ export const CONTRACTS = form => {
   return fetch("https://contracts-mx.herokuapp.com/contracts", {
     method: "POST",
     mode: "cors",
-    data: "entityName:" + form,
+    data: form,
     headers: {
       "Access-Control-Allow-Origin": "*",
       Accept: "application/json",
       "Content-Type": "application/json"
     }
-  }).then(function(response) {
-    return response;
-  });
+  })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(myJson => {
+      if (myJson !== undefined) {
+        return myJson;
+        //callback(myJson);
+        //return myJson.value;
+      }
+    });
 };
